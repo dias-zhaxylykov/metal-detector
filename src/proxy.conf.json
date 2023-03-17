@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://md.debug.testcenter.kz/md",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

@@ -1,0 +1,35 @@
+<div>
+  <form>
+    <div class="form-group">
+      <label for="name" appLanguage [lang]="lang" [text]="'_name'"></label>
+      <input type="text" [(ngModel)]="detector.brand" id="name" name="name" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="year" appLanguage [lang]="lang" [text]="'_year'"></label>
+      <input type="text" [(ngModel)]="detector.yearIssue" id="year" name="year" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="count" appLanguage [lang]="lang" [text]="'_count'"></label>
+      <input type="text" [(ngModel)]="detector.count" id="count" name="count" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="country" appLanguage [lang]="lang" [text]="'_country'"></label>
+      <select [(ngModel)]="detector.countryManufactureId" id="country" name="country" class="form-control" required>
+        <option *ngFor="let item of countries" [value]="item.id" >{{item[language]}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="type" appLanguage [lang]="lang" [text]="'_type'"></label>
+      <select [(ngModel)]="detector.typeMetalDetectorsId" id="type" name="type" class="form-control" required>
+        <option *ngFor="let item of types" [value]="item.id">{{item[language]}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="status" appLanguage [lang]="lang" [text]="'_status'"></label>
+      <select [(ngModel)]="detector.availabilityId" id="status" name="status" class="form-control" required>
+        <option *ngFor="let item of availabilities" [value]="item.id">{{item[language]}}</option>
+      </select>
+    </div>
+    <button class="btn btn-primary mt-1" (click)="save()">Save</button>
+  </form>
+</div>
